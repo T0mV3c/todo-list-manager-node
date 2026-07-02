@@ -1,0 +1,292 @@
+:root {
+    --bg: #ffffff;
+    --text: #0f172a;
+    --card: #f1f5f9;
+    --border: #0f172a;
+    --menu: #0f172a;
+    --checkbox: #22c55e;
+}
+
+[data-theme="dark"] {
+    --bg: #0f172a;
+    --text: #e2e8f0;
+    --card: #1e293b;
+    --border: #e2e8f0;
+    --menu: #e2e8f0;
+    --checkbox: #4ade80;
+}
+
+body {
+    background-color: var(--bg);
+    margin: 30px;
+    color: var(--text);
+    font-family: "Lexend", sans-serif;
+}
+
+#background-scuro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    
+    display: none;
+    z-index: 999;
+}
+
+#background-scuro.show {
+    display: block;
+}
+
+#titolo-tema {
+    display: flex;
+    justify-content: space-between;
+}
+
+#theme-toggle {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+body, .lista, #containerForm, #containerUpdateForm {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#elenco-liste {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+#creazioneLista {
+    background-color: rgb(0, 182, 0);
+    border-color: rgb(0, 170, 0);
+    border-radius: 5px;
+    font-size: x-large;
+    color: rgb(206, 255, 215);
+    width: 40px;
+    height: 40px;
+}
+
+#creazioneLista:hover {
+    background-color: rgb(0, 220, 0);
+    border-color: rgb(0, 210, 0);
+}
+
+#containerForm {
+    display: none;
+    flex-direction: column;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 20px;
+    background-color: var(--card);
+    border-radius: 20px;
+    border: solid 1px var(--border);
+    z-index: 1000;
+}
+
+#containerForm input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+#formTitolo, #formDescrizione {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin: 5px;
+}
+
+#formTitolo p, #formDescrizione p {
+    margin: 0;
+    font-size: small;
+}
+
+#div-post-lista {
+    display: flex;
+    align-content: center;
+}
+
+#post-lista {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+#containerForm.show {
+    display: flex;
+}
+
+#containerUpdateForm {
+    display: none;
+    flex-direction: column;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 20px;
+    background-color: var(--card);
+    border-radius: 20px;
+    border: solid 1px var(--border);
+    z-index: 1000;
+}
+
+#containerUpdateForm.show {
+    display: flex;
+}
+
+#formUpdateTitolo, #formUpdateDescrizione {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin: 5px;
+}
+
+#formUpdateTitolo p, #formUpdateDescrizione p {
+    margin: 0;
+    font-size: small;
+}
+
+#update-lista {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.lista {
+    border: 1px solid var(--border);
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--card);
+}
+
+.lista-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lista-header h3 {
+    margin: 0;
+}
+
+.lista > p {
+    margin: 0;
+    padding: 5px;
+}
+
+div {
+    margin: 5px;
+}
+
+.lista > div {
+    display: flex;
+    gap: 10px;
+}
+
+.lista > div > input {
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.lista > div > button {
+    background-color: rgb(0, 182, 0);
+    border-color: rgb(0, 170, 0);
+    color: rgb(206, 255, 215);
+    border-radius: 5px;
+}
+
+.lista > div > button:hover {
+    background-color: rgb(0, 210, 0);
+    border-color: rgb(0, 210, 0);
+}
+
+.menu{
+    position: relative;
+}
+
+.menu-dropdown{
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: -5px;
+    border-radius: 8px;
+    flex-direction: column;
+}
+
+.menu-dropdown.show{
+    display: flex;
+}
+
+.menu-dropdown.show > button{
+    background: transparent;
+    border: none;
+}
+
+.menu-btn {
+    background: transparent;
+    border: none;
+}
+
+#elenco-liste {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+}
+
+li span {
+    flex: 1;
+}
+
+.nota-completata {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.modifica-nota-input {
+    flex: 1;
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.salva-nota-btn {
+    margin-left: 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: var(--checkbox);
+}
+
+li > button {
+    background: transparent;
+    border: none;
+}
